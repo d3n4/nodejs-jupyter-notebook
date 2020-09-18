@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  jupyter:
+    build: .
+    restart: always
+    hostname: jupyter
+    network_mode: bridge
+    volumes:
+      - ./data:/var/jupyter
+      - ./jupyter_notebook_config.json:/root/.jupyter/jupyter_notebook_config.json
